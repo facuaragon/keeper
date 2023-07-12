@@ -1,12 +1,16 @@
 import React from "react";
 
-
-function Note({title, content}){
-    return(
-        <div className="note">
-            <h1>{title}</h1>
-            <p>{content}</p>
-        </div>
-    )
+function Note({id, onDelete, title, content}) {
+    const handleClick = ()=>{
+        onDelete(id)
+    }
+  return (
+    <div className="note">
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <button onClick={handleClick}>DELETE</button>
+    </div>
+  );
 }
+
 export default Note;
